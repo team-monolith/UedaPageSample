@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         getLayoutInflater().inflate(R.layout.add_layout_xml_data,SV)
 
         //今回追加したレイアウトのデータを取得
-        val layout:ConstraintLayout=SV.getChildAt(0)as ConstraintLayout
+        val layout:ConstraintLayout=SV.getChildAt(count)as ConstraintLayout
 
         //レイアウトに番号のタグをつけることで後で扱いやすくなる
         layout.setTag(count)
@@ -51,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         layout.setOnClickListener{
             ToastTsukuruyo(it.getTag().toString().toInt())
         }
+
+        count+=1
 
     }
 
