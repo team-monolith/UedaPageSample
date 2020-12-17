@@ -18,14 +18,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        test_add()
+
         //右下追加ボタンリスナ
         findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener{
-            layout_add()
+            test_add()
         }
     }
 
     //レイアウトを追加する関数
     fun layout_add(){
+
 
         //スクロールビューのidを取得してビューグループ（一つのまとまりとして扱える形）にする
         val SV: ViewGroup = findViewById<View>(R.id.sv_vertical) as ViewGroup
@@ -60,4 +63,15 @@ class MainActivity : AppCompatActivity() {
     fun ToastTsukuruyo(n : Int){
         Toast.makeText(applicationContext, n.toString()+"番目に追加したレイアウト", Toast.LENGTH_SHORT).show()
     }
+
+    //3件読み込みする関数
+    fun test_add(){
+        for (i in 0..2){
+            layout_add()
+        }
+    }
+
+
+
+
 }
