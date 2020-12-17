@@ -18,11 +18,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        test_add()
-
         //右下追加ボタンリスナ
         findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener{
-            test_add()
+            layout_add()
         }
     }
 
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         layout.setTag(count)
 
         //add_layout_xml_data.xmlのレイアウト内に3番目（0スタートのため2）に配置したデータを取得する
-        ((layout.getChildAt(0)as TextView).setText("追加後にテキストを編集しています"))
+        //((layout.getChildAt(0)as TextView).setText("追加後にテキストを編集しています"))
 
         //レイアウトにリスナーを設定
         //it.getTag().toString()で先ほど設定したタグ情報を取得できる
@@ -62,13 +60,6 @@ class MainActivity : AppCompatActivity() {
     //ボタンが押された場合は何番目が押されたかトーストするための関数
     fun ToastTsukuruyo(n : Int){
         Toast.makeText(applicationContext, n.toString()+"番目に追加したレイアウト", Toast.LENGTH_SHORT).show()
-    }
-
-    //3件読み込みする関数
-    fun test_add(){
-        for (i in 0..2){
-            layout_add()
-        }
     }
 
 
