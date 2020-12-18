@@ -5,8 +5,9 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
+    <!--
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="32dp"
@@ -15,29 +16,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+        -->
 
-        <ImageView
-            android:id="@+id/iv1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/examplecard" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineY1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33"/>
 
-        <ImageView
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineY2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineX1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineX2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineY1"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineX1"
+        app:layout_constraintRight_toRightOf="@id/guidelineX2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/examplecard500" />
+    <!--
+    <ImageView
             android:id="@+id/iv2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="32dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/examplecard" />
 
         <ImageView
             android:id="@+id/iv3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="32dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/examplecard" />
+-->
+    <!--
     </LinearLayout>
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

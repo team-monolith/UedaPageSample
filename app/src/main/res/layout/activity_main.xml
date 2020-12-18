@@ -12,8 +12,8 @@
 
         <LinearLayout
             android:id="@+id/sv_vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal" />
     </HorizontalScrollView>
 
@@ -26,5 +26,7 @@
         android:clickable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_input_add" />
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

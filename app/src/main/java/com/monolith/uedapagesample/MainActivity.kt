@@ -1,9 +1,13 @@
 package com.monolith.uedapagesample
 
+import android.graphics.Point
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.AutoText.getSize
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -18,8 +22,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+        val size = Point().also {
+            (applicationContext .getSystemService(WINDOW_SERVICE) as WindowManager).defaultDisplay.apply { getSize(it) }
+        }
+        val width = size.x
+        val height = size.y
+
+
         //右下追加ボタンリスナ
         findViewById<FloatingActionButton>(R.id.fab_add).setOnClickListener{
+            setContentView(R.layout.add_layout_xml_data)
+            var addImage=findViewById<ImageView>(R.id.iv1)
+
+
+
             layout_add()
         }
     }
@@ -61,7 +78,6 @@ class MainActivity : AppCompatActivity() {
     fun ToastTsukuruyo(n : Int){
         Toast.makeText(applicationContext, n.toString()+"番目に追加したレイアウト", Toast.LENGTH_SHORT).show()
     }
-
 
 
 
